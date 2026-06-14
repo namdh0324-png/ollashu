@@ -8,3 +8,11 @@
 2026-06-14 01:12:51    build_sectors.py:      Tier2 6개 · Tier1 27개
 2026-06-14 01:12:51    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
 2026-06-14 01:12:51  === update 완료 ===
+2026-06-14 20:21:51  === update 시작 ===
+2026-06-14 20:22:28    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-14
+2026-06-14 20:22:28    build_sectors.py:      Tier2 6개 · Tier1 27개
+2026-06-14 20:22:51    fetch_theme_news.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\theme_news.json  ·  뉴스 있는 테마 27개 · 헤드라인 총 61개
+2026-06-14 20:22:56    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-14 20:22:56    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-14 20:22:56    ! push_kv.py 실패(rc=1): [push_kv] 비밀 파일 없음: C:\Users\namdh\.ollashu_kv.json
+2026-06-14 20:22:56  === update 완료 ===
