@@ -5,7 +5,7 @@
 SITE_NAME = "올랐슈"
 SITE_TAGLINE = "오늘 장에서 뭐가 올랐나, 급할 거 없이 보고 가유"
 SITE_DESC = "KRX 공개 데이터로 오늘 어떤 테마가 셌는지 한눈에 보여주는 사이트유. 종목 추천 없이 시장 현황만 정보로 알려드려유."
-BASE_URL = "https://ollashu.pages.dev"  # 배포 후 실제 도메인으로 교체
+BASE_URL = "https://ollashu.namdh0324.workers.dev"  # 배포된 실제 도메인
 CONTACT_EMAIL = "namdh0324@gmail.com"        # 애드센스/문의용 메일로 교체
 
 NAV = [
