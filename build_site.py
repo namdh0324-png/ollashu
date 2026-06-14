@@ -109,6 +109,20 @@ def load_indicators():
         return {}
 
 
+def strip_unused_stocks(sectors, keep=50):
+    # 트리맵 타일(클라이언트 TOP_N=40, avg_return>0)에서만 stocks/news가 화면에 쓰임.
+    # 그 밖 섹터의 stocks/news는 표·트리맵 어디에도 안 떠서 payload에서 제거(무손실 경량화).
+    # keep=50 = TOP_N 40 + 정렬 동률 여유 10. push_kv.py에도 동일 로직 유지할 것.
+    pos = sorted([s for s in sectors if s.get("avg_return", 0) > 0],
+                 key=lambda s: s.get("avg_return", 0), reverse=True)
+    keep_ids = {id(s) for s in pos[:keep]}
+    for s in sectors:
+        if id(s) not in keep_ids:
+            s.pop("stocks", None)
+            s.pop("news", None)
+    return sectors
+
+
 def build_summary(sectors, n_total):
     top = [s["theme"] for s in sorted(sectors, key=lambda s: s.get("avg_return", 0), reverse=True)[:3]]
     if not top:
@@ -183,6 +197,7 @@ def render_index(d):
 """
 
     indicators = load_indicators()
+    strip_unused_stocks(sectors)
     payload = {
         "date": d.get("date", ""),
         "generated_at": gen_at,

@@ -26,6 +26,20 @@ def load_json(p):
         return json.load(f)
 
 
+def strip_unused_stocks(sectors, keep=50):
+    # 트리맵 타일(클라이언트 TOP_N=40, avg_return>0)에서만 stocks가 화면에 쓰임.
+    # 그 밖 섹터의 stocks/news는 화면에 안 떠서 KV payload에서 제거(무손실 경량화).
+    # keep=50 = TOP_N 40 + 정렬 동률 여유 10. build_site.py와 동일 로직 유지할 것.
+    pos = sorted([s for s in sectors if s.get("avg_return", 0) > 0],
+                 key=lambda s: s.get("avg_return", 0), reverse=True)
+    keep_ids = {id(s) for s in pos[:keep]}
+    for s in sectors:
+        if id(s) not in keep_ids:
+            s.pop("stocks", None)
+            s.pop("news", None)
+    return sectors
+
+
 def main():
     if not os.path.exists(SECRET):
         print(f"[push_kv] 비밀 파일 없음: {SECRET}", file=sys.stderr)
@@ -49,7 +63,7 @@ def main():
         "date": d.get("date", ""),
         "generated_at": d.get("generated_at", ""),
         "market": d.get("market", {}),
-        "sectors": d.get("sectors", []),
+        "sectors": strip_unused_stocks(d.get("sectors", [])),
         "indicators": ind,
     }
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
