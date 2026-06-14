@@ -433,7 +433,12 @@ def render_index(d):
     });
     paintHeat();
   }
-  var rzT; window.addEventListener('resize',function(){ clearTimeout(rzT); rzT=setTimeout(render,160); });
+  var rzT, lastW=window.innerWidth;
+  window.addEventListener('resize',function(){
+    if(window.innerWidth===lastW) return;   // 높이만 바뀌는 모바일 주소창 스크롤은 무시 → 상세 안 닫힘
+    lastW=window.innerWidth;
+    clearTimeout(rzT); rzT=setTimeout(render,160);
+  });
 
   // ---- full table with sort ----
   var tbody=document.getElementById('tbody');

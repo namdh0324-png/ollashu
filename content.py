@@ -221,6 +221,11 @@ td.num{font-family:var(--mono)}
 
 @media(max-width:880px){ .grid{grid-template-columns:repeat(3,1fr)} }
 @media(max-width:560px){
+  .site-head .wrap{height:auto; flex-wrap:wrap; gap:7px 10px; padding:9px 0}
+  .brand small{display:none}
+  .nav{margin-left:0; width:100%; gap:5px}
+  .nav a{padding:6px 9px; font-size:13px}
+  .theme-toggle{width:30px; height:30px}
   .grid{grid-template-columns:repeat(2,1fr); gap:8px}
   .tile{min-height:104px; padding:12px; border-radius:4px} .tile .ret{font-size:21px}
   .d-stats{gap:8px 16px}
