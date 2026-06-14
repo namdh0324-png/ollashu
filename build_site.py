@@ -397,7 +397,7 @@ def render_index(d):
     var W=grid.clientWidth||900;
     var H = W<560 ? Math.round(W*1.5) : Math.round(Math.min(W,960));
     grid.style.height=H+'px';
-    var GAP=3;
+    var GAP = W<560 ? 0 : 3;
     layout(tiles,W,H).forEach(function(p){
       var s=p.s, cw=Math.max(0,p.w-GAP), ch=Math.max(0,p.h-GAP);
       var el=document.createElement('div');
