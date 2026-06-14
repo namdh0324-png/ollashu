@@ -41,7 +41,7 @@ def css() -> str:
   --text-hi:#1a2129; --text-mid:#465162; --text-lo:#606b7a;
   --up:#e5484d; --up-soft:#fbe3e4; --down:#2563eb; --down-soft:#e2eafc;
   --gold:#e8ab1e; --gold-soft:#f9e7b4;
-  --tile-text:#1a2129; --tile-shadow:none;
+  --tile-text:#ffffff; --tile-shadow:0 1px 3px rgba(0,0,0,.55);
   --badge1-bg:rgba(0,0,0,.10); --badge1-fg:#1a2129;
   --head-bg:rgba(255,255,255,.85);
 }
