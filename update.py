@@ -83,6 +83,7 @@ def main():
         if not run_step(script, cwd):
             log("=== 중단(단계 실패) ===")
             sys.exit(1)
+    run_step("push_kv.py", COLLECT)         # KV 업로드(라이브 데이터): best-effort
     log("=== update 완료 ===")
 
 

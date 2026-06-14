@@ -1,7 +1,15 @@
 {
   "name": "ollashu",
   "compatibility_date": "2025-09-09",
+  "main": "worker/index.js",
   "assets": {
-    "directory": "./site"
-  }
+    "directory": "./site",
+    "binding": "ASSETS"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "DATA",
+      "id": "096c1a25f34c726ec64454c15f17b505"
+    }
+  ]
 }
