@@ -101,6 +101,14 @@ def render_ticker():
     return time_html, bar_html
 
 
+def load_indicators():
+    try:
+        with open(MARKET_IND, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
 def build_summary(sectors, n_total):
     top = [s["theme"] for s in sorted(sectors, key=lambda s: s.get("avg_return", 0), reverse=True)[:3]]
     if not top:
@@ -129,22 +137,15 @@ def render_index(d):
     def numcls(v):
         return "up-num" if v > 0 else ("down-num" if v < 0 else "flat-num")
 
-    summary = build_summary(sectors, n_total)
-    time_html, ticker = render_ticker()
-
-    hero = f"""<section class="hero">
-<div class="date">{date_disp} · {market_status()}</div>
+    hero = """<section class="hero">
+<div class="date" id="heroDate"></div>
 <div class="hero-top">
   <h1>오늘 뭐 올랐슈~?</h1>
-  {time_html}
+  <div class="hero-time" id="heroTime" style="display:none"></div>
 </div>
-<div class="market-row">
-  <span class="chip mood {mood_cls}">오늘 장 · {label_ko}</span>
-  <span class="chip"><span class="k">코스피</span><span class="v {numcls(kospi)}">{signed(kospi)}%</span></span>
-  <span class="chip"><span class="k">코스닥</span><span class="v {numcls(kosdaq)}">{signed(kosdaq)}%</span></span>
-  <span class="chip"><span class="k">본 테마</span><span class="v">{n_total}</span></span>
-</div>
-<p class="summary">{summary}</p>{ticker}
+<div class="market-row" id="marketRow"></div>
+<p class="summary" id="heroSummary"></p>
+<div id="tickerHost"></div>
 </section>
 """
 
@@ -181,10 +182,13 @@ def render_index(d):
 </div>
 """
 
+    indicators = load_indicators()
     payload = {
         "date": d.get("date", ""),
         "generated_at": gen_at,
+        "market": market,
         "sectors": sectors,
+        "indicators": indicators,
     }
     data_script = ('<script type="application/json" id="sector-data">'
                    + json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
@@ -192,9 +196,8 @@ def render_index(d):
 
     render_js = """<script>
 (function(){
-  var raw = document.getElementById('sector-data').textContent;
-  var DATA = JSON.parse(raw);
-  var S = DATA.sectors.slice();
+  var SNAPSHOT = JSON.parse(document.getElementById('sector-data').textContent);
+  var S=[], market={}, inds={}, curDate='', tiles=[], lastGen=null, curKey='up_pct';
 
   // 색=등락(절대 정수% 구간). 0~7%+ 8단계, 7% 이상은 제일 진함. 당일 최대값과 무관.
   function heat(r){
@@ -216,15 +219,77 @@ def render_index(d):
     });
   }
   window.repaintHeat = paintHeat;
-  function sgn(v,d){d=d||2; return (v>=0?'+':'')+v.toFixed(d);}
+  function sgn(v,d){d=d||2; return (v>=0?'+':'')+Number(v).toFixed(d);}
   function chg(v){return (v>=0?'+':'')+Number(v).toFixed(2)+'%';}
+  function numcls(v){return v>0?'up-num':(v<0?'down-num':'flat-num');}
+
+  var WD=['일','월','화','수','목','금','토'];
+  function fmtDate(s){
+    if(!s||s.length<10) return s||'';
+    var y=+s.slice(0,4), mo=+s.slice(5,7), da=+s.slice(8,10);
+    if(!y||!mo||!da) return s;
+    return s+' ('+WD[new Date(y,mo-1,da).getDay()]+')';
+  }
+  function marketStatus(){
+    var now=new Date(), d=now.getDay();
+    if(d===0||d===6) return '지난 장 기준이유';
+    var t=now.getHours()*60+now.getMinutes();
+    if(t<480) return '아직 장 안 열렸슈 · 어제 기준';
+    if(t<530) return '프리마켓 도는 중이유';
+    if(t<540) return '곧 정규장 열려유';
+    if(t<930) return '장 도는 중이유';
+    if(t<1200) return '애프터마켓 도는 중이유';
+    return '장 끝나고 기준';
+  }
+  var LABEL_KO={BULL:'다 올랐슈',STRONG:'쎘슈',NORMAL:'그냥저냥유',WEAK:'시원찮유',EXTREME:'정신없었슈',NARROW:'몇 개만 올랐슈',NARROW_EXTREME:'진짜 몇 개만 올랐슈'};
+  var MOOD_CLS={BULL:'mood-bull',STRONG:'mood-strong',NORMAL:'mood-normal',WEAK:'mood-weak',EXTREME:'mood-extreme',NARROW:'mood-narrow',NARROW_EXTREME:'mood-narrow'};
+  function buildSummary(arr,n){
+    var top=arr.slice().sort(function(a,b){return b.avg_return-a.avg_return;}).slice(0,3).map(function(s){return s.theme;});
+    if(!top.length) return '오늘은 집계된 테마가 없슈.';
+    return '오늘 제일 센 테마는 '+top.join(', ')+' 쪽이었슈.<br>전체 '+n+'개, 급할 거 없으니께 아래에서 천천히 보고 가유.';
+  }
+  function renderHero(){
+    var label=market.label||'', labelKo=LABEL_KO[label]||label, moodCls=MOOD_CLS[label]||'mood-normal';
+    var kospi=market.kospi_change||0, kosdaq=market.kosdaq_change||0;
+    document.getElementById('heroDate').textContent=fmtDate(curDate)+' · '+marketStatus();
+    document.getElementById('marketRow').innerHTML=
+      '<span class="chip mood '+moodCls+'">오늘 장 · '+labelKo+'</span>'+
+      '<span class="chip"><span class="k">코스피</span><span class="v '+numcls(kospi)+'">'+sgn(kospi)+'%</span></span>'+
+      '<span class="chip"><span class="k">코스닥</span><span class="v '+numcls(kosdaq)+'">'+sgn(kosdaq)+'%</span></span>'+
+      '<span class="chip"><span class="k">본 테마</span><span class="v">'+S.length+'</span></span>';
+    document.getElementById('heroSummary').innerHTML=buildSummary(S,S.length);
+  }
+  function renderTime(){
+    var up=(inds&&inds.updated)||'', el=document.getElementById('heroTime'), arr=(inds&&inds.indicators)||[];
+    if(!arr.length){ el.style.display='none'; return; }
+    el.style.display='';
+    var hhmm='—'; if(up.indexOf('T')>=0) hhmm=up.split('T')[1].slice(0,8);
+    el.innerHTML='<span class="ht-k">시세 기준 · 실시간 아니유</span><span class="ht-v">'+hhmm+'</span>';
+  }
+  function renderTicker(){
+    var arr=(inds&&inds.indicators)||[], host=document.getElementById('tickerHost');
+    if(!arr.length){ host.innerHTML=''; return; }
+    var chips=arr.map(function(it){
+      if(it.value==null) return '';
+      var digits=(it.digits!=null)?it.digits:2, unit=it.unit||'';
+      var num=Number(it.value).toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits});
+      var val=(unit==='$')?('$'+num):(num+unit);
+      var c=it.change_pct, cstr, ccls;
+      if(c==null){ cstr='–'; ccls='flat-num'; }
+      else{ ccls=c>0?'up-num':(c<0?'down-num':'flat-num'); cstr=(c>=0?'+':'')+Number(c).toFixed(2)+'%'; }
+      return '<span class="tk"><span class="tk-k">'+it.label+'</span><span class="tk-v">'+val+'</span><span class="tk-c '+ccls+'">'+cstr+'</span></span>';
+    }).join('');
+    host.innerHTML='<div class="ticker">'+chips+'</div>';
+  }
 
   // ---- 트리맵: 오른(+) 테마 중 상승률 상위 TOP_N. 위치=오른 비율 우선, 크기=평균 상승률 ----
   var TOP_N = 40;
-  var tiles = S.filter(function(s){return s.avg_return>0;})
-               .sort(function(a,b){return b.avg_return-a.avg_return;})
-               .slice(0,TOP_N)
-               .sort(function(a,b){return (b.up_pct-a.up_pct) || (b.avg_return-a.avg_return);});
+  function recomputeTiles(){
+    tiles = S.filter(function(s){return s.avg_return>0;})
+             .sort(function(a,b){return b.avg_return-a.avg_return;})
+             .slice(0,TOP_N)
+             .sort(function(a,b){return (b.up_pct-a.up_pct) || (b.avg_return-a.avg_return);});
+  }
   var grid = document.getElementById('grid');
   var detailHost = document.getElementById('detailHost');
   var detail=document.createElement('div'); detail.className='detail'; detail.style.display='none';
@@ -353,12 +418,10 @@ def render_index(d):
     });
     paintHeat();
   }
-  render();
   var rzT; window.addEventListener('resize',function(){ clearTimeout(rzT); rzT=setTimeout(render,160); });
 
   // ---- full table with sort ----
   var tbody=document.getElementById('tbody');
-  document.getElementById('tcount').textContent='총 '+S.length+'개';
   var tierTxt={2:'짱 쎄유',1:'쎄유',0:'–'};
   function rowHtml(s){
     var rc = s.avg_return>0?'up-num':(s.avg_return<0?'down-num':'flat-num');
@@ -380,9 +443,28 @@ def render_index(d):
     b.addEventListener('click',function(){
       btns.forEach(function(x){x.classList.remove('on');});
       b.classList.add('on');
-      renderTable(b.getAttribute('data-sort'));
+      curKey=b.getAttribute('data-sort');
+      renderTable(curKey);
     });
   });
+
+  // ---- 데이터 적용 + 60초 폴링(라이브) ----
+  function applyData(d, initial){
+    S=(d.sectors||[]).slice(); market=d.market||{}; inds=d.indicators||{}; curDate=d.date||'';
+    renderHero(); renderTime(); renderTicker();
+    if(initial || d.generated_at!==lastGen){          // 데이터 실제로 바뀐 경우만 트리맵·표 재구성
+      lastGen=d.generated_at;
+      recomputeTiles(); render(); renderTable(curKey);
+      document.getElementById('tcount').textContent='총 '+S.length+'개';
+    }
+  }
+  function fetchData(){
+    fetch('/api/data',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
+      .then(function(j){ if(j&&j.sectors&&j.sectors.length) applyData(j,false); }).catch(function(){});
+  }
+  applyData(SNAPSHOT, true);   // 인라인 스냅샷으로 즉시 렌더
+  fetchData();                 // 곧바로 최신값으로 갱신
+  setInterval(fetchData, 60000);
 })();
 </script>
 """
