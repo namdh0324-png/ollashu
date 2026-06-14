@@ -201,6 +201,7 @@ td.num{font-family:var(--mono)}
   .tile{min-height:104px; padding:12px} .tile .ret{font-size:21px}
   .d-stats{gap:8px 16px}
   .table-head .sortbtns{margin-left:0; width:100%}
-  th,td{padding:9px 12px}
+  table{font-size:12.5px}
+  th,td{padding:8px 9px; white-space:normal}
 }
 @media(prefers-reduced-motion:reduce){ .tile{transition:none} .detail{animation:none} }
