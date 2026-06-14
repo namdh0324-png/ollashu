@@ -222,7 +222,7 @@ td.num{font-family:var(--mono)}
 @media(max-width:880px){ .grid{grid-template-columns:repeat(3,1fr)} }
 @media(max-width:560px){
   .grid{grid-template-columns:repeat(2,1fr); gap:8px}
-  .tile{min-height:104px; padding:12px} .tile .ret{font-size:21px}
+  .tile{min-height:104px; padding:12px; border-radius:4px} .tile .ret{font-size:21px}
   .d-stats{gap:8px 16px}
   .table-head .sortbtns{margin-left:0; width:100%}
   table{font-size:12.5px}
