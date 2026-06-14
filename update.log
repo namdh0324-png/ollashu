@@ -32,3 +32,11 @@
 2026-06-14 20:37:58    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
 2026-06-14 20:37:59    push_kv.py: [push_kv] KV 업로드 OK (195093 bytes, http 200)
 2026-06-14 20:37:59  === update 완료 ===
+2026-06-14 20:50:31  === update 시작 ===
+2026-06-14 20:51:05    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-14
+2026-06-14 20:51:05    build_sectors.py:      Tier2 6개 · Tier1 27개
+2026-06-14 20:51:05    뉴스 최신(2h 이내) — 수집 생략
+2026-06-14 20:51:10    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-14 20:51:10    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-14 20:51:11    push_kv.py: [push_kv] KV 업로드 OK (195094 bytes, http 200)
+2026-06-14 20:51:11  === update 완료 ===

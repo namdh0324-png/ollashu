@@ -1,5 +1,5 @@
 {
-"updated": "2026-06-14T20:37:57",
+"updated": "2026-06-14T20:51:10",
 "indicators": [
 {
 "label": "나스닥 선물",
@@ -38,8 +38,8 @@
 },
 {
 "label": "비트코인",
-"value": 64585.62,
-"change_pct": 5.1,
+"value": 64596.35,
+"change_pct": 5.12,
 "digits": 0,
 "unit": "$"
 }

@@ -204,12 +204,12 @@ def render_index(d):
     var light = document.documentElement.dataset.theme==='light';
     if(r>=0){
       var lv=Math.min(Math.floor(r),7);
-      var lo=light?0.07:0.12, hi=light?0.66:0.96;
+      var lo=0.12, hi=light?0.90:0.96;
       var a=lo + lv*(hi-lo)/7;
       return 'rgba(229,72,77,'+a.toFixed(3)+')';
     }
     var lv2=Math.min(Math.floor(Math.abs(r)),5);
-    var lo2=light?0.07:0.12, hi2=light?0.40:0.70;
+    var lo2=0.12, hi2=light?0.58:0.70;
     var b=lo2 + lv2*(hi2-lo2)/5;
     return 'rgba(90,110,130,'+b.toFixed(3)+')';
   }
