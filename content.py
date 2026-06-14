@@ -232,6 +232,8 @@ td.num{font-family:var(--mono)}
   .hero-time{align-items:flex-start; padding:9px 14px}
   .grid{grid-template-columns:repeat(2,1fr); gap:8px}
   .tile{min-height:104px; padding:12px; border-radius:4px} .tile .ret{font-size:21px}
+  .tile .body{justify-content:center; gap:2px}
+  .tile .theme{flex:0 1 auto !important}
   .d-stats{gap:8px 16px}
   .table-head .sortbtns{margin-left:0; width:100%}
   table{font-size:12.5px}
