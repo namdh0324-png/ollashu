@@ -1,0 +1,47 @@
+{
+"updated": "2026-06-14T16:57:06",
+"indicators": [
+{
+"label": "나스닥 선물",
+"value": 29662.0,
+"change_pct": 1.87,
+"digits": 2,
+"unit": ""
+},
+{
+"label": "S&P 선물",
+"value": 7435.0,
+"change_pct": 0.57,
+"digits": 2,
+"unit": ""
+},
+{
+"label": "환율(USD)",
+"value": 1517.89,
+"change_pct": -2.35,
+"digits": 1,
+"unit": "원"
+},
+{
+"label": "WTI 유가",
+"value": 84.88,
+"change_pct": -3.76,
+"digits": 2,
+"unit": "$"
+},
+{
+"label": "美 10년물",
+"value": 4.487,
+"change_pct": -1.43,
+"digits": 2,
+"unit": "%"
+},
+{
+"label": "비트코인",
+"value": 64405.81,
+"change_pct": 4.81,
+"digits": 0,
+"unit": "$"
+}
+]
+}

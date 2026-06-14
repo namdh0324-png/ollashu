@@ -1,0 +1,10 @@
+여기에 stock_agent에서 아래 두 파일을 복사하세요:
+
+  theme_map.json        (필수 — 테마↔종목 매핑)
+  theme_blocklist.json  (선택 — 없으면 블록 0개)
+
+원본 위치:
+  C:\Users\namdh\OneDrive\Desktop\stock_agent\data\meta\theme_map.json
+  C:\Users\namdh\OneDrive\Desktop\stock_agent\data\meta\theme_blocklist.json
+
+복사 후: collect\build_sectors.py 실행하면 sector_latest.json 생성.

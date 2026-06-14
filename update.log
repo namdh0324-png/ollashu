@@ -1,0 +1,10 @@
+2026-06-14 01:08:24  === update 시작 ===
+2026-06-14 01:08:57    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-14
+2026-06-14 01:08:57    build_sectors.py:      Tier2 6개 · Tier1 27개
+2026-06-14 01:08:58    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-14 01:08:58  === update 완료 ===
+2026-06-14 01:12:17  === update 시작 ===
+2026-06-14 01:12:51    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-14
+2026-06-14 01:12:51    build_sectors.py:      Tier2 6개 · Tier1 27개
+2026-06-14 01:12:51    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-14 01:12:51  === update 완료 ===

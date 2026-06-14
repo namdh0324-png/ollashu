@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이용약관 | 올랐슈</title>
+<meta name="description" content="KRX 공개 데이터로 오늘 어떤 테마가 셌는지 한눈에 보여주는 사이트유. 종목 추천 없이 시장 현황만 정보로 알려드려유.">
+<link rel="canonical" href="https://ollashu.pages.dev/terms.html">
+<meta property="og:title" content="이용약관 | 올랐슈">
+<meta property="og:description" content="KRX 공개 데이터로 오늘 어떤 테마가 셌는지 한눈에 보여주는 사이트유. 종목 추천 없이 시장 현황만 정보로 알려드려유.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();</script>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="index.html"><span class="dot"></span>올랐슈<small>오늘 뭐 올랐슈</small></a>
+<nav class="nav"><a href="index.html">오늘장</a><a href="guide.html">보는 법</a><a href="about.html">인사</a><a href="faq.html">궁금한 거</a><a href="disclaimer.html">투자 고지</a><button class="theme-toggle" id="themeToggle" type="button" aria-label="라이트/다크 전환"></button></nav>
+</div></header>
+<main class="wrap"><div class="page">
+<h1>이용약관</h1>
+<p class="lead">올랐슈 이용에 적용되는 기본 약관입니다.</p>
+
+<h2>제1조 (목적)</h2>
+<p>본 약관은 올랐슈(이하 "사이트")가 제공하는 정보 서비스의 이용 조건과 책임 범위를 정합니다.</p>
+
+<h2>제2조 (서비스의 성격)</h2>
+<p>사이트는 KRX 공개 데이터를 가공한 시장 현황 정보를 무료로 제공합니다. 사이트는 투자자문·
+유사투자자문 서비스가 아니며, 제공 정보는 투자 권유가 아닙니다.</p>
+
+<h2>제3조 (면책)</h2>
+<ul>
+<li>사이트는 제공 정보의 정확성·완전성·적시성을 보장하지 않습니다.</li>
+<li>이용자가 사이트 정보를 이용해 내린 판단과 그 결과에 대해 사이트는 책임지지 않습니다.</li>
+<li>사이트는 천재지변, 데이터 공급처의 사정, 기술적 문제 등으로 서비스가 중단·지연될 수 있으며
+이에 대해 책임지지 않습니다.</li>
+</ul>
+
+<h2>제4조 (저작권)</h2>
+<p>사이트가 생성한 화면·디자인·집계 결과물의 권리는 올랐슈에 있습니다. 원천 시세
+데이터의 권리는 각 제공처에 귀속됩니다. 무단 복제·재배포를 금합니다.</p>
+
+<h2>제5조 (약관의 변경)</h2>
+<p>사이트는 필요 시 본 약관을 개정할 수 있으며, 변경 사항은 본 페이지에 게시합니다.</p>
+
+<p class="updated">최종 개정: 2026-06-13</p>
+</div></main>
+<footer class="site-foot"><div class="wrap">
+<div class="disc">본 사이트는 KRX 공개 정보를 가공한 <b>시장 현황 요약</b>이며, 특정 종목의 매매를 권유하지 않습니다. 투자 판단과 책임은 이용자 본인에게 있습니다.</div>
+<div class="flinks"><a href="index.html">오늘장</a><a href="guide.html">보는 법</a><a href="about.html">인사</a><a href="faq.html">궁금한 거</a><a href="disclaimer.html">투자 고지</a><a href="privacy.html">개인정보처리방침</a><a href="terms.html">이용약관</a></div>
+<div class="copy">© 2026 올랐슈. 데이터 출처: KRX 공개 정보. 문의: namdh0324@gmail.com</div>
+</div></footer>
+<script>
+(function(){
+  var btn=document.getElementById('themeToggle');
+  function isLight(){return document.documentElement.dataset.theme==='light';}
+  function icon(){ if(btn) btn.textContent = isLight() ? '\u263D' : '\u2600\uFE0E'; }
+  icon();
+  if(btn) btn.addEventListener('click',function(){
+    var next = isLight() ? 'dark' : 'light';
+    if(next==='light') document.documentElement.dataset.theme='light';
+    else document.documentElement.removeAttribute('data-theme');
+    try{localStorage.setItem('theme',next);}catch(e){}
+    icon();
+    if(window.repaintHeat) window.repaintHeat();
+  });
+})();
+</script>
+</body></html>
