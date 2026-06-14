@@ -244,6 +244,15 @@ def head(title: str, desc: str, canonical: str) -> str:
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="{BASE_URL}/{canonical}">
+<meta property="og:site_name" content="{SITE_NAME}">
+<meta property="og:image" content="{BASE_URL}/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{BASE_URL}/og.png">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" as="style" crossorigin
