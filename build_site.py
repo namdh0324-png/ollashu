@@ -413,8 +413,9 @@ def render_index(d):
       var maxW=Math.max(cw - padV*2, 10);
       var capFs=Math.min(cw*0.16, 18);
       var nameFs=9;                                 // 못 찾으면 최소
+      var cwf=(W<560?0.95:0.56);                     // 한글은 거의 정사각 → 모바일은 글자폭 정확히 잡아 잘림 방지
       for(var fz=capFs; fz>=9; fz-=0.5){
-        var cpl=Math.max(1, Math.floor(maxW/(fz*0.56)));   // 한 줄 글자수
+        var cpl=Math.max(1, Math.floor(maxW/(fz*cwf)));    // 한 줄 글자수
         var ln=Math.ceil(nameLen/cpl);                     // 필요 줄수
         if(ln*fz*1.22 <= availName){ nameFs=fz; break; }   // 다 들어가면 채택
       }

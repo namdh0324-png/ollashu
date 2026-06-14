@@ -221,11 +221,13 @@ td.num{font-family:var(--mono)}
 
 @media(max-width:880px){ .grid{grid-template-columns:repeat(3,1fr)} }
 @media(max-width:560px){
-  .site-head .wrap{height:auto; flex-wrap:wrap; gap:7px 10px; padding:9px 0}
+  .site-head .wrap{height:60px; flex-wrap:nowrap; gap:10px}
+  .brand{flex:0 0 auto}
   .brand small{display:none}
-  .nav{gap:5px}
-  .nav a{padding:6px 9px; font-size:13px}
-  .theme-toggle{width:30px; height:30px}
+  .nav{flex-wrap:nowrap; overflow-x:auto; gap:4px}
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{padding:6px 9px; font-size:13px; flex:0 0 auto}
+  .theme-toggle{flex:0 0 auto; width:30px; height:30px}
   .hero{padding:22px 0 14px}
   .hero-time{align-items:flex-start; padding:9px 14px}
   .grid{grid-template-columns:repeat(2,1fr); gap:8px}
