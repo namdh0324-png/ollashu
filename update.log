@@ -16,3 +16,19 @@
 2026-06-14 20:22:56    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
 2026-06-14 20:22:56    ! push_kv.py 실패(rc=1): [push_kv] 비밀 파일 없음: C:\Users\namdh\.ollashu_kv.json
 2026-06-14 20:22:56  === update 완료 ===
+2026-06-14 20:27:44  === update 시작 ===
+2026-06-14 20:28:18    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-14
+2026-06-14 20:28:18    build_sectors.py:      Tier2 6개 · Tier1 27개
+2026-06-14 20:28:18    뉴스 최신(2h 이내) — 수집 생략
+2026-06-14 20:28:23    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-14 20:28:24    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-14 20:28:24    ! push_kv.py 실패(rc=1): [push_kv] KV 업로드 실패: HTTP Error 401: Unauthorized
+2026-06-14 20:28:24  === update 완료 ===
+2026-06-14 20:37:18  === update 시작 ===
+2026-06-14 20:37:53    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-14
+2026-06-14 20:37:53    build_sectors.py:      Tier2 6개 · Tier1 27개
+2026-06-14 20:37:53    뉴스 최신(2h 이내) — 수집 생략
+2026-06-14 20:37:57    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-14 20:37:58    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-14 20:37:59    push_kv.py: [push_kv] KV 업로드 OK (195093 bytes, http 200)
+2026-06-14 20:37:59  === update 완료 ===
