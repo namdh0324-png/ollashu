@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ollashu.namdh0324.workers.dev/sitemap.xml
+Sitemap: https://ollashu.com/sitemap.xml
