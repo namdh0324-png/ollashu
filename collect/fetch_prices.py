@@ -34,6 +34,7 @@ OUT = os.path.join(DATA, "all_stocks.json")
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                          "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 MARKET_SUM = "https://finance.naver.com/sise/sise_market_sum.naver?sosok={sosok}&page={page}"
+MARKET_SUM_NXT = "https://finance.naver.com/sise/nxt_sise_market_sum.naver?sosok={sosok}&page={page}"
 MAX_PAGES = 100
 SLEEP = 0.3
 
@@ -103,11 +104,11 @@ def _parse_page(html):
     return rows
 
 
-def _scrape_market(sosok):
+def _scrape_market(sosok, url_tmpl=MARKET_SUM):
     session = requests.Session()
     collected = {}
     for page in range(1, MAX_PAGES + 1):
-        url = MARKET_SUM.format(sosok=sosok, page=page)
+        url = url_tmpl.format(sosok=sosok, page=page)
         try:
             r = session.get(url, headers=HEADERS, timeout=10)
             r.encoding = "euc-kr"
@@ -161,11 +162,20 @@ def collect(date_str):
         breadth[label] = round(adv / tot * 100, 1) if tot else None
         print(f"  {label}: {tot}종목 (상승비율 {breadth[label]}%)")
 
+    nxt_matched = 0
+    for sosok in (0, 1):
+        raw_nxt = _scrape_market(sosok, MARKET_SUM_NXT)
+        for code, (name, chg) in raw_nxt.items():
+            if code in stocks:
+                stocks[code]["return_1d_nxt"] = chg
+                nxt_matched += 1
+    print(f"  NXT: {nxt_matched}종목 매칭")
+
     idx = _index_change(date_str)
     payload = {
         "collected_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "date": date_str,
-        "source": "naver sise_market_sum",
+        "source": "naver sise_market_sum (+nxt)",
         "market": {
             "kospi_change": idx.get("kospi"),
             "kosdaq_change": idx.get("kosdaq"),
