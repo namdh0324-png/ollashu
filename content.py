@@ -184,6 +184,10 @@ a{color:inherit; text-decoration:none}
 .sortbtns button{font-family:var(--sans); font-size:12.5px; color:var(--text-mid); cursor:pointer;
   background:var(--surface2); border:1px solid var(--line); padding:6px 11px; border-radius:8px}
 .sortbtns button.on{color:#1a1405; background:var(--gold); border-color:var(--gold); font-weight:700}
+.exchbar{display:flex; align-items:center; gap:8px; margin:2px 0 12px; flex-wrap:wrap}
+.exchbar button{font-family:var(--sans); font-size:14.5px; font-weight:700; color:var(--text-mid); cursor:pointer; background:var(--surface2); border:1px solid var(--line); padding:8px 20px; border-radius:9px}
+.exchbar button.on{color:#1a1405; background:var(--gold); border-color:var(--gold)}
+.exch-note{font-size:12.5px; color:var(--text-lo); font-family:var(--sans)}
 table{width:100%; border-collapse:collapse; font-size:14px}
 th,td{padding:10px 16px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap}
 th:first-child,td:first-child{text-align:left}

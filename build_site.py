@@ -198,11 +198,14 @@ def render_index(d):
 
     indicators = load_indicators()
     strip_unused_stocks(sectors)
+    sectors_nxt = sorted(d.get("sectors_nxt", []), key=lambda s: s.get("weighted_strong", 0), reverse=True)
+    strip_unused_stocks(sectors_nxt)
     payload = {
         "date": d.get("date", ""),
         "generated_at": gen_at,
         "market": market,
         "sectors": sectors,
+        "sectors_nxt": sectors_nxt,
         "indicators": indicators,
     }
     data_script = ('<script type="application/json" id="sector-data">'
@@ -213,6 +216,8 @@ def render_index(d):
 (function(){
   var SNAPSHOT = JSON.parse(document.getElementById('sector-data').textContent);
   var S=[], market={}, inds={}, curDate='', tiles=[], lastGen=null, curKey='up_pct';
+  var DATA={}, curExch='krx';
+  function pickSectors(){ return (curExch==='nxt' ? (DATA.sectors_nxt||[]) : (DATA.sectors||[])); }
 
   // 색=등락(절대 정수% 구간). 0~7%+ 8단계, 7% 이상은 제일 진함. 당일 최대값과 무관.
   function heat(r){
@@ -468,16 +473,49 @@ def render_index(d):
       renderTable(curKey);
     });
   });
+  function applyExchange(){
+    S=pickSectors().slice();
+    renderHero();
+    recomputeTiles(); render(); renderTable(curKey);
+    document.getElementById('tcount').textContent='총 '+S.length+'개';
+    updateExchNote();
+  }
+  function updateExchNote(){
+    var el=document.getElementById('exchNote'); if(!el) return;
+    var now=new Date(), t=now.getHours()*60+now.getMinutes(), wk=(now.getDay()===0||now.getDay()===6), msg;
+    if(curExch==='nxt'){
+      if(wk) msg='지난 NXT 장 기준이유';
+      else if(t<480) msg='NXT도 아직이유 (8시부터)';
+      else if(t<530) msg='지금 NXT 프리마켓이유 · 8:00~8:50';
+      else if(t<930) msg='NXT 메인장 기준이유';
+      else if(t<1200) msg='지금 NXT 애프터마켓이유 · 15:30~20:00';
+      else msg='NXT 장 끝나고 기준이유';
+    } else {
+      msg='한국거래소(KRX) 기준이유';
+    }
+    el.textContent=msg;
+  }
+  var exchBtns=document.querySelectorAll('.exchbar button');
+  exchBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.classList.contains('on')) return;
+      exchBtns.forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      curExch=b.getAttribute('data-exch');
+      applyExchange();
+    });
+  });
 
   // ---- 데이터 적용 + 60초 폴링(라이브) ----
   function applyData(d, initial){
-    S=(d.sectors||[]).slice(); market=d.market||{}; inds=d.indicators||{}; curDate=d.date||'';
+    DATA=d; S=pickSectors().slice(); market=d.market||{}; inds=d.indicators||{}; curDate=d.date||'';
     renderHero(); renderTime(); renderTicker();
     if(initial || d.generated_at!==lastGen){          // 데이터 실제로 바뀐 경우만 트리맵·표 재구성
       lastGen=d.generated_at;
       recomputeTiles(); render(); renderTable(curKey);
       document.getElementById('tcount').textContent='총 '+S.length+'개';
     }
+    updateExchNote();
   }
   function fetchData(){
     fetch('/api/data',{cache:'no-store'}).then(function(r){return r.ok?r.json():null;})
@@ -490,7 +528,11 @@ def render_index(d):
 </script>
 """
 
-    body = ('<main class="wrap">' + hero + legend + grid_table + '</main>\n'
+    exchbar = ('<div class="exchbar" id="exchbar">'
+               '<button data-exch="krx" class="on">KRX</button>'
+               '<button data-exch="nxt">NXT</button>'
+               '<span class="exch-note" id="exchNote"></span></div>\n')
+    body = ('<main class="wrap">' + hero + exchbar + legend + grid_table + '</main>\n'
             + data_script + render_js)
 
     title = f"오늘 뭐 올랐슈 · {date_disp} | {C.SITE_NAME}"
@@ -540,6 +582,10 @@ def main():
         if nl:
             s["news"] = nl
             n_with_news += 1
+    for s in d.get("sectors_nxt", []):
+        nl = news_map.get(s.get("theme"))
+        if nl:
+            s["news"] = nl
 
     os.makedirs(SITE, exist_ok=True)
 
