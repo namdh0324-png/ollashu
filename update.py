@@ -19,7 +19,7 @@ LOG = os.path.join(ROOT, "update.log")
 THEME_NEWS = os.path.join(ROOT, "data", "theme_news.json")
 PY = sys.executable   # 이 스크립트를 실행한 바로 그 파이썬(venv) 사용
 
-NEWS_MAX_AGE_SEC = 2 * 3600   # 뉴스는 2시간에 한 번만 갱신(가격은 매번)
+NEWS_MAX_AGE_SEC = 30 * 60    # 뉴스는 30분에 한 번만 갱신(가격은 매번)
 
 # 가격→집계는 매번, 뉴스는 throttle, 빌드는 매번
 ALWAYS_PRE = [
