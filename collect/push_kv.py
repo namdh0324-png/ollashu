@@ -79,11 +79,14 @@ def main():
 
     secs = merge_news(d.get("sectors", []))
     secs = strip_unused_stocks(secs)
+    secs_nxt = merge_news(d.get("sectors_nxt", []))
+    secs_nxt = strip_unused_stocks(secs_nxt)
     payload = {
         "date": d.get("date", ""),
         "generated_at": d.get("generated_at", ""),
         "market": d.get("market", {}),
         "sectors": secs,
+        "sectors_nxt": secs_nxt,
         "indicators": ind,
     }
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
