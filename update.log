@@ -276,3 +276,28 @@
 2026-06-15 17:30:41    push_kv.py: [push_kv] KV 업로드 OK (62544 bytes, http 200)
 2026-06-15 17:30:41  === update 완료 ===
 2026-06-15 18:00:01  === update 시작 ===
+2026-06-15 18:30:01  === update 시작 ===
+2026-06-15 19:00:01  === update 시작 ===
+2026-06-15 19:00:37    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-15
+2026-06-15 19:00:37    build_sectors.py:      Tier2 3개 · Tier1 15개
+2026-06-15 19:00:37    뉴스 최신(2h 이내) — 수집 생략
+2026-06-15 19:00:42    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-15 19:00:42    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-15 19:00:43    push_kv.py: [push_kv] KV 업로드 OK (68620 bytes, http 200)
+2026-06-15 19:00:43  === update 완료 ===
+2026-06-15 19:30:01  === update 시작 ===
+2026-06-15 19:30:36    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-15
+2026-06-15 19:30:36    build_sectors.py:      Tier2 3개 · Tier1 15개
+2026-06-15 19:30:36    뉴스 최신(2h 이내) — 수집 생략
+2026-06-15 19:30:41    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-15 19:30:41    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-15 19:30:42    push_kv.py: [push_kv] KV 업로드 OK (68617 bytes, http 200)
+2026-06-15 19:30:42  === update 완료 ===
+2026-06-15 20:00:01  === update 시작 ===
+2026-06-15 20:00:35    fetch_prices.py: [OK] C:\Users\namdh\OneDrive\Desktop\krx_heatmap\data\all_stocks.json  ·  전 종목 2581개  ·  2026-06-15
+2026-06-15 20:00:35    build_sectors.py:      Tier2 3개 · Tier1 15개
+2026-06-15 20:00:35    뉴스 최신(2h 이내) — 수집 생략
+2026-06-15 20:00:41    fetch_market.py: market_indicators.json 저장: 6개
+2026-06-15 20:00:41    build_site.py:      페이지: index + 6 + style.css + robots + sitemap
+2026-06-15 20:00:42    push_kv.py: [push_kv] KV 업로드 OK (68620 bytes, http 200)
+2026-06-15 20:00:42  === update 완료 ===

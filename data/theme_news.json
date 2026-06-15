@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15 18:28:02",
+  "generated_at": "2026-06-15 18:44:44",
   "date": "2026-06-15",
   "themes": {
     "조선기자재": [
@@ -32,13 +32,31 @@
     ],
     "LNG(액화천연가스)": [
       {
-        "title": "한국전력거래소 중부본부, 충북 오송에 둥지",
-        "url": "https://www.goodmorningcc.com/news/articleView.html?idxno=447556",
-        "source": "goodmorningcc.com",
-        "date": "2026-06-15 18:12"
+        "title": "한·카타르, LNG 안정적 공급 재확인 … 조선·첨단산업까지 파트너십 확...",
+        "url": "https://biz.newdaily.co.kr/site/data/html/2026/06/15/2026061500194.html",
+        "source": "biz.newdaily.co.kr",
+        "date": "2026-06-15 18:30"
+      },
+      {
+        "title": "김정관 산업장관, 카타르서 'LNG 최우선 공급' 재확인",
+        "url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4420072",
+        "source": "news.einfomax.co.kr",
+        "date": "2026-06-15 18:36"
+      },
+      {
+        "title": "김정관 산업장관, 카타르와 LNG 공급망 점검...첨단산업 협력 확대",
+        "url": "https://www.ajunews.com/view/20260615163405111",
+        "source": "아주경제",
+        "date": "2026-06-15 18:32"
       }
     ],
     "탈모 치료": [
+      {
+        "title": "탈모 지원 본격 추진…건보 재정 괜찮나?",
+        "url": "https://biz.sbs.co.kr/article_hub/20000316689?division=NAVER",
+        "source": "biz.sbs.co.kr",
+        "date": "2026-06-15 18:29"
+      },
       {
         "title": "‘탈모 건강보험 적용’···탈모 청년들 “탁상공론”",
         "url": "https://www.jjan.kr/article/20260615500506",
@@ -50,12 +68,6 @@
         "url": "https://www.mt.co.kr/thebio/2026/06/15/2026061416454132913",
         "source": "머니투데이",
         "date": "2026-06-15 17:17"
-      },
-      {
-        "title": "기어코 탈모 치료 건보적용 시동 건 복지부 [사설]",
-        "url": "https://www.mk.co.kr/article/12074561",
-        "source": "매일경제",
-        "date": "2026-06-15 17:10"
       }
     ],
     "전력저장장치(ESS)": [
@@ -80,12 +92,6 @@
         "url": "https://www.sentv.co.kr/article/view/sentv202606150062",
         "source": "sentv.co.kr",
         "date": "2026-06-15 18:12"
-      },
-      {
-        "title": "\"전쟁 끝\" 코스피 8500선 회복…조선·방산으로 열기 옮겨갈까 [美-이란...",
-        "url": "http://www.fnnews.com/news/202606151824115538",
-        "source": "파이낸셜뉴스",
-        "date": "2026-06-15 18:26"
       }
     ],
     "타이어": [
@@ -162,16 +168,16 @@
         "date": "2026-06-15 13:22"
       },
       {
+        "title": "\"열차 탈 때 킥보드 안 됩니다\"… 코레일, 7월부터 '대용량 리튬배터리...",
+        "url": "http://www.dailysmart.co.kr/news/articleView.html?idxno=125549",
+        "source": "dailysmart.co.kr",
+        "date": "2026-06-15 18:42"
+      },
+      {
         "title": "코레일, 화재 예방 위해 열차 내 리튬배터리 휴대 제한",
         "url": "https://www.newspost.kr/news/articleView.html?idxno=223577",
         "source": "newspost.kr",
         "date": "2026-06-15 18:20"
-      },
-      {
-        "title": "[속보] 세방전지, 美 배터리 손자회사에 1,069억원 추가 출자… 북미 ES...",
-        "url": "https://www.cbci.co.kr/news/articleView.html?idxno=582140",
-        "source": "cbci.co.kr",
-        "date": "2026-06-15 17:48"
       }
     ],
     "스마트카(SMART CAR)": [
