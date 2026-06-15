@@ -74,7 +74,7 @@ def theme_tier(avg_return, weighted_strong):
     return 0
 
 
-def compute_theme_momentum(all_stocks, themes, blocklist, spec_weight):
+def compute_theme_momentum(all_stocks, themes, blocklist, spec_weight, field="return_1d", skip_missing=False):
     """run_scanner compute_theme_map_momentum 이식(로직 동일) + 구성 종목 부가.
     반환: {name: {avg_return, strong_count, weighted_strong, data_count, total_count, members[]}}
     members[] = [{name, change}] (등락률 내림차순) — 사실 정보만."""
@@ -92,7 +92,11 @@ def compute_theme_momentum(all_stocks, themes, blocklist, spec_weight):
             s = all_stocks.get(t)
             if not s:
                 continue
-            ret = s.get("return_1d", 0)
+            ret = s.get(field)
+            if ret is None:
+                if skip_missing:
+                    continue
+                ret = 0
             returns.append(ret)
             members.append({"name": s.get("name", t), "change": round(float(ret), 2)})
             if ret > 0:
@@ -134,14 +138,7 @@ def market_label(kospi_change, advance_pct):
     return "EXTREME"
 
 
-def build_snapshot(payload, themes, ticker_themes, blocklist):
-    all_stocks = payload.get("stocks", {})
-    market = payload.get("market", {})
-    date_str = payload.get("date") or datetime.today().strftime("%Y-%m-%d")
-
-    spec = build_spec_weight(ticker_themes, blocklist)
-    stats = compute_theme_momentum(all_stocks, themes, blocklist, spec)
-
+def _sectors_from_stats(stats):
     sectors = []
     for name, info in stats.items():
         if info["strong_count"] < 1:
@@ -159,6 +156,20 @@ def build_snapshot(payload, themes, ticker_themes, blocklist):
             "stocks": info["members"],   # 구성 종목(이름+등락률) — 펼침 패널용
         })
     sectors.sort(key=lambda x: x["weighted_strong"], reverse=True)
+    return sectors
+
+
+def build_snapshot(payload, themes, ticker_themes, blocklist):
+    all_stocks = payload.get("stocks", {})
+    market = payload.get("market", {})
+    date_str = payload.get("date") or datetime.today().strftime("%Y-%m-%d")
+
+    spec = build_spec_weight(ticker_themes, blocklist)
+    stats = compute_theme_momentum(all_stocks, themes, blocklist, spec)
+    sectors = _sectors_from_stats(stats)
+    stats_nxt = compute_theme_momentum(all_stocks, themes, blocklist, spec,
+                                       field="return_1d_nxt", skip_missing=True)
+    sectors_nxt = _sectors_from_stats(stats_nxt)
 
     label = market_label(market.get("kospi_change"), market.get("advance_pct_kospi"))
     return {
@@ -171,7 +182,9 @@ def build_snapshot(payload, themes, ticker_themes, blocklist):
         },
         "sector_count": len(sectors),
         "sectors": sectors,
-        "disclaimer": "본 데이터는 KRX 공개 정보 기반 시장 현황 요약이며 투자 권유가 아닙니다.",
+        "sector_count_nxt": len(sectors_nxt),
+        "sectors_nxt": sectors_nxt,
+        "disclaimer": "본 데이터는 공개 시세 정보 기반 시장 현황 요약이며 투자 권유가 아닙니다.",
     }
 
 
@@ -190,7 +203,7 @@ def main():
         json.dump(snap, f, ensure_ascii=False, indent=2)
 
     print(f"[OK] {OUT}")
-    print(f"     날짜 {snap['date']} · 라벨 {snap['market']['label']} · 섹터 {snap['sector_count']}개")
+    print(f"     날짜 {snap['date']} · 라벨 {snap['market']['label']} · 섹터 {snap['sector_count']}개 · NXT섹터 {snap['sector_count_nxt']}개")
     t2 = sum(1 for s in snap["sectors"] if s["tier"] == 2)
     t1 = sum(1 for s in snap["sectors"] if s["tier"] == 1)
     print(f"     Tier2 {t2}개 · Tier1 {t1}개")
