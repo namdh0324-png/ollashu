@@ -41,7 +41,11 @@ BLOCK = ["투자경고", "투자주의", "투자위험", "투자주의종목", "
          "날씨", "기온", "나들이", "미세먼지 농도", "거리응원", "국가대표", "응원",
          "창업경진대회", "인수위", "민선", "지사", "시장직", "[샷!]", "[패트롤]",
          "[기고]", "[CEO&뉴스]", "오늘의 운세", "칼럼", "공모전", "[업앤다운]",
-         "특가", "ETF 수익률", "수익률 톱", "수익률 상위"]
+         "특가", "ETF 수익률", "수익률 톱", "수익률 상위",
+         "부고", "모친상", "별세", "빈소",
+         "e스포츠", "이스포츠", "MSI", "LCK",
+         "힐링", "브랜드 필름", "방문 교체", "가족 초청", "WRC", "[포토]",
+         "반입 제한", "반입 금지", "휴대 금지"]
 
 # 자동 주가 리캡 봇 패턴(증상만) — 정규식 차단.
 BLOCK_RE = [
@@ -50,6 +54,16 @@ BLOCK_RE = [
     re.compile(r"주가[,\s].*(횡보|돌파|오름세|내림세|급등세|강세 마감)"),
     re.compile(r"\d+\.?\d*\s*%\s*(상승|하락|오름|내림)\s*마감"),
     re.compile(r"주가[,\s].*\d+월\s*\d+일"),
+]
+
+# 비경제·비뉴스 도메인 차단(게임/e스포츠/교민지/홍보성 소형매체).
+# netloc에 아래 문자열이 들어가면 후보에서 제외. 새 노이즈 도메인 발견 시 추가.
+BLOCK_DOMAIN = [
+    "game.", "dailyesports", "esports", "gamechosun", "thisisgame",
+    "inven.co.kr", "ruliweb", "gameple",
+    "worldkorean", "dongponews", "koreadaily",
+    "paxetv", "lawissue", "seoultimes.news",
+    "seouleconews", "cnbizm", "onews.tv",
 ]
 
 # 원인(촉매) — 가점. 헐거운 단어(투자/확대/진출/선정 등)는 제외해 노이즈 차단.
@@ -158,6 +172,14 @@ def _blocked(title):
     return any(rx.search(title) for rx in BLOCK_RE)
 
 
+def _domain_blocked(url):
+    try:
+        dom = urllib.parse.urlparse(url).netloc.lower()
+    except Exception:
+        return False
+    return any(b in dom for b in BLOCK_DOMAIN)
+
+
 _DUP_STOP = {"규모", "사업", "발표", "기업", "대표", "관련", "위해", "통해", "예정", "전망", "분기"}
 
 
@@ -207,7 +229,8 @@ def _candidates(items, today, kws, stocks):
         key = re.sub(r'\s+', '', t)
         if not t or key in seen:
             continue
-        if _blocked(t) or not _recent(it, today) or not _relevant(t, kws, stocks):
+        if (_domain_blocked(it.get("url", "")) or _blocked(t)
+                or not _recent(it, today) or not _relevant(t, kws, stocks)):
             continue
         seen.add(key)
         it = dict(it)
