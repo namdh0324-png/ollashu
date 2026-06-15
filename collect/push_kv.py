@@ -17,6 +17,7 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECTOR = os.path.join(ROOT, "data", "sector_latest.json")
 MARKET = os.path.join(ROOT, "data", "market_indicators.json")
+THEME_NEWS = os.path.join(ROOT, "data", "theme_news.json")
 SECRET = os.path.join(os.path.expanduser("~"), ".ollashu_kv.json")
 KEY = "latest"
 
@@ -24,6 +25,23 @@ KEY = "latest"
 def load_json(p):
     with open(p, encoding="utf-8") as f:
         return json.load(f)
+
+
+def merge_news(sectors):
+    # build_site.py와 동일하게 theme_news.json을 각 섹터에 부착(테마명 매칭).
+    # 이게 있어야 라이브 /api/data 상세창의 "왜 올랐댜?"에 뉴스가 뜬다.
+    news_map = {}
+    if os.path.exists(THEME_NEWS):
+        try:
+            with open(THEME_NEWS, encoding="utf-8") as f:
+                news_map = json.load(f).get("themes", {})
+        except Exception:
+            news_map = {}
+    for s in sectors:
+        nl = news_map.get(s.get("theme"))
+        if nl:
+            s["news"] = nl
+    return sectors
 
 
 def strip_unused_stocks(sectors, keep=50):
@@ -59,11 +77,13 @@ def main():
     except Exception:
         ind = {}
 
+    secs = merge_news(d.get("sectors", []))
+    secs = strip_unused_stocks(secs)
     payload = {
         "date": d.get("date", ""),
         "generated_at": d.get("generated_at", ""),
         "market": d.get("market", {}),
-        "sectors": strip_unused_stocks(d.get("sectors", [])),
+        "sectors": secs,
         "indicators": ind,
     }
     body = json.dumps(payload, ensure_ascii=False).encode("utf-8")

@@ -1,425 +1,249 @@
 {
-  "generated_at": "2026-06-14 20:22:51",
-  "date": "2026-06-14",
+  "generated_at": "2026-06-15 16:00:48",
+  "date": "2026-06-15",
   "themes": {
-    "반도체 장비": [
+    "조선기자재": [
       {
-        "title": "[균형발전이 불러온 수도권 역차별] '반도체 쪼개기' 국가발전 뒤흔든다",
-        "url": "https://www.joongboo.com/news/articleView.html?idxno=363728689",
-        "source": "joongboo.com",
-        "date": "2026-06-14 20:14"
+        "title": "KOMERI, 양원창 신임 원장 선출… 조선기자재 신뢰성 검증 인프라 확대",
+        "url": "https://www.onews.tv/news/articleView.html?idxno=281538",
+        "source": "onews.tv",
+        "date": "2026-06-15 15:22"
       },
       {
-        "title": "'AI 반도체 핵심' SK하이닉스 청주공장 관리 체계 도마 위",
-        "url": "https://www.jbnews.com/news/articleView.html?idxno=1505913",
-        "source": "jbnews.com",
-        "date": "2026-06-14 19:04"
-      },
-      {
-        "title": "글로벌 반도체 밸류체인 포괄... 분산투자로 안정적인 수익률 [이런 펀...",
-        "url": "http://www.fnnews.com/news/202606141828003629",
-        "source": "파이낸셜뉴스",
-        "date": "2026-06-14 18:29"
-      }
-    ],
-    "반도체 재료/부품": [
-      {
-        "title": "삼성전기, 실리콘 캐패시터 양산…'AI 핵심 부품 토털 솔루션' 구축",
-        "url": "http://www.ftoday.co.kr/news/articleView.html?idxno=360346",
-        "source": "ftoday.co.kr",
-        "date": "2026-06-14 09:28"
-      },
-      {
-        "title": "코스닥지수 1,000선 회복...반도체 강세와 정책 기대 힘입어",
-        "url": "https://www.tokenpost.kr/news/market/369115",
-        "source": "tokenpost.kr",
-        "date": "2026-06-14 10:58"
-      },
-      {
-        "title": "KAIST, 반도체 미세화 한계 예측기술 개발",
-        "url": "https://www.naeil.com/news/read/591814?ref=naver",
-        "source": "naeil.com",
-        "date": "2026-06-14 16:58"
-      }
-    ],
-    "로봇(산업용/협동로봇 등)": [
-      {
-        "title": "加 로보티크, AI 기반 로봇 워크셀 통합 자동화 플랫폼 'IQ' 출시",
-        "url": "https://www.irobotnews.com/news/articleView.html?idxno=46881",
-        "source": "irobotnews.com",
-        "date": "2026-06-14 20:04"
-      },
-      {
-        "title": "\"HL만도, 로봇 관절 핵심 공급사\"",
-        "url": "https://www.hankyung.com/article/2026061237321",
-        "source": "한국경제",
-        "date": "2026-06-12 17:36"
-      },
-      {
-        "title": "美 피털 서지컬, 절개 없는 수술로봇으로 추가 투자 유치",
-        "url": "https://www.irobotnews.com/news/articleView.html?idxno=46888",
-        "source": "irobotnews.com",
-        "date": "2026-06-14 20:14"
-      }
-    ],
-    "시스템반도체": [
-      {
-        "title": "한미반도체, 스페이스X에 500억 투자…우주·반도체 성장성 베팅",
-        "url": "https://www.getnews.co.kr/news/articleView.html?idxno=872318",
-        "source": "getnews.co.kr",
-        "date": "2026-06-13 11:24"
-      },
-      {
-        "title": "AI 반도체 훈풍에 시스템반도체주 '불기둥'...가온칩스 에이디테크놀로...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459638",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 10:42"
-      }
-    ],
-    "증권": [
-      {
-        "title": "국민성장 정책성펀드 2차 출자전 흥행…VC·PE·증권사 65곳 출사표",
-        "url": "https://www.econovill.com/news/articleView.html?idxno=742341",
-        "source": "econovill.com",
-        "date": "2026-06-14 18:14"
-      },
-      {
-        "title": "원종석 신영증권 회장, 갑자기 주목받은 20년 넘는 자사주 쇼핑…'오비...",
-        "url": "https://www.greened.kr/news/articleView.html?idxno=342447",
-        "source": "greened.kr",
-        "date": "2026-06-12 15:37"
-      }
-    ],
-    "HBM(고대역폭메모리)": [
-      {
-        "title": "한미반도체, 스페이스X에 500억 투자…우주·반도체 성장성 베팅",
-        "url": "https://www.getnews.co.kr/news/articleView.html?idxno=872318",
-        "source": "getnews.co.kr",
-        "date": "2026-06-13 11:24"
-      },
-      {
-        "title": "코스닥, 기관 매수에 상승 마감...원익IPS, 이오테크닉스 상승 VS 주성엔...",
-        "url": "http://www.econonews.co.kr/news/articleView.html?idxno=439619",
-        "source": "econonews.co.kr",
-        "date": "2026-06-12 21:30"
-      }
-    ],
-    "전후 재건(우크라/중동 전쟁 등)": [
-      {
-        "title": "“이주비 넘어 안전 경쟁”⋯재건축 수주전 ‘내진 특등급’ 부상",
-        "url": "https://www.etoday.co.kr/news/view/2593173",
-        "source": "etoday.co.kr",
-        "date": "2026-06-14 16:02"
-      },
-      {
-        "title": "글로벌 재건 마스터플랜 가동…희림, 중동발 초대형 수주 잭팟 터질까",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459597",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 09:22"
-      },
-      {
-        "title": "월 1500대 회복한 아우디의 '빛과 그늘'···고객 신뢰 재건이 '진짜 시...",
-        "url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2438109",
-        "source": "enewstoday.co.kr",
-        "date": "2026-06-13 15:00"
-      }
-    ],
-    "피지컬 AI/휴머노이드 로봇": [
-      {
-        "title": "美 하이퍼스케일 데이터, 미시간 AI 데이터센터에 휴머노이드 배치",
-        "url": "https://www.irobotnews.com/news/articleView.html?idxno=46867",
-        "source": "irobotnews.com",
-        "date": "2026-06-14 20:02"
-      },
-      {
-        "title": "박종오 한국마이크로의료로봇연구원장 \"피지컬 AI가 미래 산업 이끈다\"",
-        "url": "https://www.namdonews.com/news/articleView.html?idxno=913495",
-        "source": "namdonews.com",
-        "date": "2026-06-14 17:46"
-      },
-      {
-        "title": "삼성전기, AI반도체 핵심부품 라인업 완성",
-        "url": "https://www.mk.co.kr/article/12073785",
-        "source": "매일경제",
-        "date": "2026-06-14 17:37"
-      }
-    ],
-    "온디바이스 AI": [
-      {
-        "title": "삼성 파운드리, 커지는 흑자전환 기대감…구글 차세대 AI칩 수주 유력",
-        "url": "https://www.asiatime.co.kr/article/20260614500082",
-        "source": "asiatime.co.kr",
-        "date": "2026-06-14 14:42"
-      },
-      {
-        "title": "韓 AI·6G 보안 국제표준 개발 착수···ITU-T서 신규과제 14건 승인",
-        "url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2438647",
-        "source": "enewstoday.co.kr",
-        "date": "2026-06-14 14:19"
-      },
-      {
-        "title": "빅테크 자체 AI 칩 열풍…가온칩스, 독보적 설계력 앞세워 수주 대박 예...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459629",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 10:16"
-      }
-    ],
-    "STO(토큰증권 발행)": [
-      {
-        "title": "STO, 글로벌 무대 서려면 “제도·인프라·기초자산 고르게 갖춰야”",
-        "url": "https://it.donga.com/109022/",
-        "source": "it.donga.com",
-        "date": "2026-06-12 17:30"
-      }
-    ],
-    "리튬": [
-      {
-        "title": "美 예일 리프트 트럭, 리튬 이온 배터리·충전기 출시",
-        "url": "https://www.irobotnews.com/news/articleView.html?idxno=46882",
-        "source": "irobotnews.com",
-        "date": "2026-06-14 20:06"
-      },
-      {
-        "title": "세레니티 \"日 WF6 공급망 흔들리면 후성 수혜 가능성\"",
-        "url": "https://www.tokenpost.kr/news/breaking/368991",
-        "source": "tokenpost.kr",
-        "date": "2026-06-13 19:20"
-      },
-      {
-        "title": "배터리 캐즘에도…“無水수산화리튬 생산량 3배 늘릴 것”",
-        "url": "https://www.sedaily.com/article/20055558?ref=naver",
-        "source": "서울경제",
-        "date": "2026-06-14 18:09"
-      }
-    ],
-    "철강 주요종목": [
-      {
-        "title": "포스코스틸리온, 제품가 인상으로 실적 개선 예상…목표가↑-현대차",
-        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=02765046645481064",
-        "source": "이데일리",
-        "date": "2026-06-12 08:27"
-      },
-      {
-        "title": "중국 감산 기대에 철강업종 질주…저평가 매력 부각",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459668",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 12:02"
-      },
-      {
-        "title": "완제품 막히자 반제품으로… 中 철강, ‘관세 없는 길’로 들어온다",
-        "url": "https://biz.chosun.com/industry/company/2026/06/14/S74T3YERGVE2TD77OOJKK3DUG4/?utm_source=naver&utm_medium=original&utm_campaign=biz",
-        "source": "조선비즈",
-        "date": "2026-06-14 06:01"
-      }
-    ],
-    "LNG(액화천연가스)": [
-      {
-        "title": "LNG·송전 등 흩어진 역량 결집 … 전력공급망 기업 M&A도 정조준",
-        "url": "https://www.mk.co.kr/article/12073805",
-        "source": "매일경제",
-        "date": "2026-06-14 17:42"
-      }
-    ],
-    "풍력에너지": [
-      {
-        "title": "두산에너빌리티 우리기술 등 국내 원전주 '빙긋'…흐름 잇나?",
-        "url": "https://www.cbci.co.kr/news/articleView.html?idxno=581757",
-        "source": "cbci.co.kr",
-        "date": "2026-06-14 00:00"
-      }
-    ],
-    "日 수출 규제(국산화 등)": [
-      {
-        "title": "中의 ‘텅스텐 수출 제한’ 직격탄… 日 AI 반도체 공급망 통째로 흔들...",
-        "url": "https://www.g-enews.com/view.php?ud=2026061407151583260c8c1c064d_1",
-        "source": "g-enews.com",
-        "date": "2026-06-14 07:18"
-      },
-      {
-        "title": "세레니티 \"日 WF6 공급망 흔들리면 후성 수혜 가능성\"",
-        "url": "https://www.tokenpost.kr/news/breaking/368991",
-        "source": "tokenpost.kr",
-        "date": "2026-06-13 19:20"
-      }
-    ],
-    "GTX(수도권 광역급행철도)": [
-      {
-        "title": "GTX-B 인천시청역 환승센터 '설상가상'",
-        "url": "https://www.incheonilbo.com/news/articleView.html?idxno=1325108",
-        "source": "incheonilbo.com",
-        "date": "2026-06-14 18:20"
-      },
-      {
-        "title": "[부동산 심머니] '월계 미미삼' 재건축 시동 … GTX 호재 안고 6천가구 ...",
-        "url": "https://www.mk.co.kr/article/12073743",
-        "source": "매일경제",
-        "date": "2026-06-14 17:18"
-      },
-      {
-        "title": "\"철근 빠지자 집값도 2억 뚝\"…GTX 삼성역 지연에 일산·파주 ‘비명’",
-        "url": "https://www.dt.co.kr/article/12067455?ref=naver",
-        "source": "dt.co.kr",
-        "date": "2026-06-14 16:00"
-      }
-    ],
-    "건설기계": [
-      {
-        "title": "\"노후 장비 다 바꿔라\"... 전진건설로봇, 국내외 쌍방향 수주 랠리 시동",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459594",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 09:16"
-      }
-    ],
-    "전자파": [
-      {
-        "title": "한미반도체, 스페이스X에 500억 투자…우주·반도체 성장성 베팅",
-        "url": "https://www.getnews.co.kr/news/articleView.html?idxno=872318",
-        "source": "getnews.co.kr",
-        "date": "2026-06-13 11:24"
-      },
-      {
-        "title": "HBM 전쟁의 숨은 승자… 후공정 장비주 제너셈 급부상",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459819",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-13 08:46"
-      }
-    ],
-    "온실가스(탄소배출권)/탄소 포집·활용·저장(CCUS)": [
-      {
-        "title": "세레니티 \"日 WF6 공급망 흔들리면 후성 수혜 가능성\"",
-        "url": "https://www.tokenpost.kr/news/breaking/368991",
-        "source": "tokenpost.kr",
-        "date": "2026-06-13 19:20"
-      },
-      {
-        "title": "탄소중립 퍼스트 무버, 한전 전력연구원 8대 연구소장을 만나다 ⑤ 이종...",
-        "url": "https://www.electimes.com/news/articleView.html?idxno=368912",
-        "source": "electimes.com",
-        "date": "2026-06-13 07:00"
-      },
-      {
-        "title": "유청·비지로 이산화탄소 잡는다고?",
-        "url": "https://www.newstree.kr/newsView/ntr202606120003",
-        "source": "newstree.kr",
-        "date": "2026-06-12 11:14"
-      }
-    ],
-    "철도": [
-      {
-        "title": "우리넷, 종속회사 아이스톰-비제이커넥트 합병 결정",
-        "url": "https://www.edaily.co.kr/news/newspath.asp?newsid=04851126645481064",
-        "source": "이데일리",
-        "date": "2026-06-12 16:11"
-      },
-      {
-        "title": "현대로템, K-철도 상생협력 추진 전략 발표",
-        "url": "https://www.gnnews.co.kr/news/articleView.html?idxno=638911",
-        "source": "gnnews.co.kr",
-        "date": "2026-06-14 19:50"
-      },
-      {
-        "title": "광주 도시철도 2호선, 안전·품질 점검 나서",
-        "url": "https://www.namdonews.com/news/articleView.html?idxno=913459",
-        "source": "namdonews.com",
-        "date": "2026-06-14 19:36"
-      }
-    ],
-    "냉각시스템(액침냉각 등)": [
-      {
-        "title": "엔비디아 다음 수혜주는 냉각장비?... 액침냉각株 유니셈 GST 3S 오스텍 ...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459664",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 11:50"
-      }
-    ],
-    "피팅(관이음쇠)/밸브": [
-      {
-        "title": "AI 전력 수요 폭증에 원전주 부각…태광 한미글로벌 삼미금속 GS건설 대...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459653",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 10:58"
-      },
-      {
-        "title": "삼성·하이닉스 수혜에 조선까지…비엠티 '쌍끌이 성장'",
-        "url": "https://www.mt.co.kr/stock/2026/06/12/2026061210200776081",
-        "source": "머니투데이",
-        "date": "2026-06-12 10:56"
-      }
-    ],
-    "시멘트/레미콘": [
-      {
-        "title": "8000대 멈춰선 수도권 레미콘...구조적 모순이 키운 공급망 마비 사태",
-        "url": "https://www.lcnews.co.kr/news/articleView.html?idxno=203340",
-        "source": "lcnews.co.kr",
-        "date": "2026-06-12 08:58"
-      },
-      {
-        "title": "통합 한일시멘트 출범…한일홀딩스 건자재 전략, 규모보다 효율로 간다",
-        "url": "https://www.thepowernews.co.kr/view.php?ud=202606091056284670de3f0aa1be_7",
-        "source": "thepowernews.co.kr",
-        "date": "2026-06-13 11:26"
-      },
-      {
-        "title": "삼전닉스 건설현장 멈추게 한 레미콘 운송노조 파업 … 배치플랜트 명분...",
-        "url": "https://biz.newdaily.co.kr/site/data/html/2026/06/12/2026061200103.html",
-        "source": "biz.newdaily.co.kr",
-        "date": "2026-06-12 11:30"
-      }
-    ],
-    "리비안(RIVIAN)": [
-      {
-        "title": "\"HL만도, 로봇 관절 핵심 공급사\"",
-        "url": "https://www.hankyung.com/article/2026061237321",
-        "source": "한국경제",
-        "date": "2026-06-12 17:36"
-      },
-      {
-        "title": "글로벌 미래 모빌리티 시장 패러다임 변화…리비안 공급망, 새로운 성장...",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459703",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 14:22"
-      },
-      {
-        "title": "리비안 CEO, 7개월 만에 1조 5000억 조달…'반(反)옵티머스' 승부수",
-        "url": "https://www.g-enews.com/view.php?ud=2026061414305888952bd56fbc3c_1",
-        "source": "g-enews.com",
-        "date": "2026-06-14 14:38"
-      }
-    ],
-    "우주태양광(페로브스카이트 등)": [
-      {
-        "title": "[특징주] 유니테스트, 600억 규모 괌 태양광 발전소 건설 계약",
-        "url": "https://www.newstnt.com/news/articleView.html?idxno=706218",
-        "source": "newstnt.com",
-        "date": "2026-06-12 16:08"
+        "title": "[더벨][AI 시대 선박엔진산업의 변신] 새 주인 찾는 STX엔진, 'AIDC 엔진'...",
+        "url": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202606111336443400108621",
+        "source": "thebell.co.kr",
+        "date": "2026-06-15 11:02"
       }
     ],
     "항공/저가 항공사(LCC)": [
       {
-        "title": "대한항공, 프리미엄 여객·화물 '쌍끌이 호조'… 실적 안정성 돋보이네",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=459620",
-        "source": "pinpointnews.co.kr",
-        "date": "2026-06-12 09:58"
+        "title": "[미-이란 전쟁 종식 합의] 항공∙여행주 껑충…방산 수출에도 호재",
+        "url": "http://www.segyebiz.com/newsView/20260615512808?OutUrl=naver",
+        "source": "segyebiz.com",
+        "date": "2026-06-15 15:46"
       },
       {
-        "title": "[인도증시] 중동 평화 기대감에 2% 상승...석유기업·항공사 주가 ↑",
-        "url": "https://www.newspim.com/news/view/20260612001185",
-        "source": "뉴스핌",
-        "date": "2026-06-12 19:56"
+        "title": "SFP&SV한인상공회의소, \"에어프레미아항공, 가성비 높아요\"",
+        "url": "http://www.worldkorean.net/news/articleView.html?idxno=57095",
+        "source": "worldkorean.net",
+        "date": "2026-06-15 15:58"
       },
       {
-        "title": "“여름휴가, 제값 주고 가면 바보?”…항공권 할인받는 카드 꿀팁은",
-        "url": "https://www.mk.co.kr/article/12073615",
-        "source": "매일경제",
-        "date": "2026-06-14 15:31"
+        "title": "감사원 \"인천공항공사, 상업시설 임대료 1,500억 과소 부과\"",
+        "url": "http://www.yonhapnewstv.co.kr/news/AKR20260615132224Sza",
+        "source": "yonhapnewstv.co.kr",
+        "date": "2026-06-15 13:23"
       }
     ],
-    "모듈러주택": [
+    "전력설비": [
       {
-        "title": "GS건설, ‘북오산자이 드포레’ 분양",
-        "url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202606120937060940122",
-        "source": "dnews.co.kr",
-        "date": "2026-06-14 11:02"
+        "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
+        "source": "pinpointnews.co.kr",
+        "date": "2026-06-15 10:54"
+      },
+      {
+        "title": "\"美 AI 전력 수요 수혜 탄력\"...효성중공업, 올해 영업이익 1조원 '훌쩍...",
+        "url": "https://www.newspim.com/news/view/20260615000914",
+        "source": "뉴스핌",
+        "date": "2026-06-15 14:44"
+      }
+    ],
+    "LNG(액화천연가스)": [
+      {
+        "title": "K-조선 LNG선 수주 릴레이…한화엔진, '이중연료 엔진' 앞세워 직접 수혜...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460177",
+        "source": "pinpointnews.co.kr",
+        "date": "2026-06-15 13:26"
+      },
+      {
+        "title": "LNG선 주름잡던 日, 이제 韓 기술 찾는다… 건조 공백이 부른 역전",
+        "url": "https://biz.chosun.com/industry/company/2026/06/15/HU3NWK43LVFEVH33TNAZCBTI5M/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+        "source": "조선비즈",
+        "date": "2026-06-15 14:15"
+      }
+    ],
+    "탈모 치료": [
+      {
+        "title": "[EBN 데이터센터] 15일 상승 종목 30選…현대약품, 탈모 건보 적용 검토...",
+        "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1712558",
+        "source": "ebn.co.kr",
+        "date": "2026-06-15 15:52"
+      },
+      {
+        "title": "건보 적용 가능성에…탈모 관련주 '불기둥' 마감 [특징주]",
+        "url": "https://www.dailian.co.kr/news/view/1656109/?sc=Naver",
+        "source": "dailian.co.kr",
+        "date": "2026-06-15 15:42"
+      },
+      {
+        "title": "'탈모' 건보 시대 오나···1000만 환자 움직이면 제약시장 바뀐다",
+        "url": "https://www.smartbizn.com/news/articleView.html?idxno=146186",
+        "source": "smartbizn.com",
+        "date": "2026-06-15 15:24"
+      }
+    ],
+    "전력저장장치(ESS)": [
+      {
+        "title": "AI 전력 수요 폭증 수혜주 부각…초전도체株 LS ELECTRIC 신성델타테크 ...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460127",
+        "source": "pinpointnews.co.kr",
+        "date": "2026-06-15 10:54"
+      },
+      {
+        "title": "\"북미 전력시장 뚫었다\"…SK이터닉스, 대규모 ESS 가동에 주가 '활짝'",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460207",
+        "source": "pinpointnews.co.kr",
+        "date": "2026-06-15 14:18"
+      }
+    ],
+    "남북경협": [
+      {
+        "title": "트럼프가 올린 김정은 사진에 남북경협주 '꿈틀'…대화 재개 기대감 반...",
+        "url": "http://www.fntimes.com/html/view.php?ud=2026061513572219402a735e27af_18",
+        "source": "fntimes.com",
+        "date": "2026-06-15 14:08"
+      }
+    ],
+    "조선": [
+      {
+        "title": "거제시의회 이태열 의원, \"삼성중공업·한화오션 협력사 임금·고용정책...",
+        "url": "https://www.newsgn.com/news/articleView.html?idxno=556962",
+        "source": "newsgn.com",
+        "date": "2026-06-15 15:34"
+      },
+      {
+        "title": "미·이란 종전에 호르무즈 개방··· 조선 '기대'·철강 '반색'·해운 '...",
+        "url": "https://www.greenpostkorea.co.kr/news/articleView.html?idxno=306922",
+        "source": "greenpostkorea.co.kr",
+        "date": "2026-06-15 15:52"
+      },
+      {
+        "title": "수많은 MMORPG의 퇴장, '조선협객전'이 여전히 자리를 지키는 이유",
+        "url": "http://game.dailyesports.com/view.php?ud=202606151544433049eb81adcc4e_26",
+        "source": "game.dailyesports.com",
+        "date": "2026-06-15 15:51"
+      }
+    ],
+    "타이어": [
+      {
+        "title": "한국타이어, 대전숲체원서 가족 힐링 프로그램 운영",
+        "url": "http://www.paxetv.com/news/articleView.html?idxno=274668",
+        "source": "paxetv.com",
+        "date": "2026-06-15 15:54"
+      },
+      {
+        "title": "한국타이어, ‘2026 WRC’ 이슬라스 카나리아스 랠리 경기 담은 새 브랜...",
+        "url": "http://www.lawissue.co.kr/view.php?ud=20260615153628314167191f6c6e_12",
+        "source": "lawissue.co.kr",
+        "date": "2026-06-15 15:40"
+      },
+      {
+        "title": "한국앤컴퍼니, 배터리 방문 교체 서비스 운영",
+        "url": "https://www.seoultimes.news/news/article.html?no=2000096633",
+        "source": "seoultimes.news",
+        "date": "2026-06-15 15:22"
+      }
+    ],
+    "MLCC(적층세라믹콘덴서)": [
+      {
+        "title": "[이슈체크] 엔비디아 뒤 숨은 승자 삼성전기…AI 핵심부품 다 품었다",
+        "url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=844242",
+        "source": "hansbiz.co.kr",
+        "date": "2026-06-15 11:00"
+      },
+      {
+        "title": "[N2 증시 풍향계] 항공·MLCC·탈모 테마 대거 ‘불기둥’…산한지주, 장...",
+        "url": "https://www.news2day.co.kr/article/20260615500067",
+        "source": "news2day.co.kr",
+        "date": "2026-06-15 10:32"
+      }
+    ],
+    "2026 상반기 신규상장": [
+      {
+        "title": "[마키나락스 IPO] '한국판 팔란티어'의 야심 \"상장한 날 2.0 발표\"",
+        "url": "https://dealsite.co.kr/articles/163010",
+        "source": "dealsite.co.kr",
+        "date": "2026-06-15 09:02"
+      }
+    ],
+    "전선": [
+      {
+        "title": "LS전선, 동해안 HVDC 2단계 수주..국가 전력망 핵심축으로",
+        "url": "http://www.4th.kr/news/articleView.html?idxno=2113199",
+        "source": "4th.kr",
+        "date": "2026-06-15 15:44"
+      }
+    ],
+    "생명보험": [
+      {
+        "title": "[부고] 유제상(생명보험협회 기획조정부장)씨 모친상",
+        "url": "http://www.seouleconews.com/news/articleView.html?idxno=91824",
+        "source": "seouleconews.com",
+        "date": "2026-06-15 15:52"
+      },
+      {
+        "title": "한화생명·T1, LCK 대표로 2026 MSI 대전행 티켓 확보",
+        "url": "https://www.cnbizm.com/news/articleView.html?idxno=305509",
+        "source": "cnbizm.com",
+        "date": "2026-06-15 15:00"
+      }
+    ],
+    "2차전지(LFP/리튬인산철)": [
+      {
+        "title": "2차전지 고메탈화 수혜… 에코프로머티·LG화학, 전구체 시장 주도",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460219",
+        "source": "pinpointnews.co.kr",
+        "date": "2026-06-15 14:44"
+      },
+      {
+        "title": "가전 부품 넘어 배터리로... 파워넷, LFP·ESS 신사업 탑재하고 퀀텀 점...",
+        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=460096",
+        "source": "pinpointnews.co.kr",
+        "date": "2026-06-15 10:12"
+      }
+    ],
+    "리튬": [
+      {
+        "title": "세방리튬배터리, LG엔솔과 1.8조원 북미 ESS 공급 협력",
+        "url": "https://www.thelec.kr/news/articleView.html?idxno=58077",
+        "source": "디일렉",
+        "date": "2026-06-15 13:22"
+      },
+      {
+        "title": "열차서 '대용량 리튬배터리' 금지…\"노트북 O, 전동킥보드 X\"",
+        "url": "http://mbn.mk.co.kr/pages/news/newsView.php?category=mbn00009&news_seq_no=5199851",
+        "source": "매일경제",
+        "date": "2026-06-15 15:58"
+      },
+      {
+        "title": "코레일 “7월부터 지하철·열차에 대용량 리튬배터리 휴대 금지”",
+        "url": "https://www.kmib.co.kr/article/view.asp?arcid=0029970825&code=61121111&cp=nv",
+        "source": "kmib.co.kr",
+        "date": "2026-06-15 15:54"
+      }
+    ],
+    "스마트카(SMART CAR)": [
+      {
+        "title": "[특징주] LG이노텍, AI 인프라 수혜·실적 개선 기대에 15%대 강세",
+        "url": "https://www.ajunews.com/view/20260615141633644",
+        "source": "아주경제",
+        "date": "2026-06-15 14:20"
+      }
+    ],
+    "유심(USIM)": [
+      {
+        "title": "LG헬로비전 헬로모바일, '현대홈쇼핑 유심 요금제' 출시…월 2만원 쇼핑...",
+        "url": "https://news.mtn.co.kr/news-detail/2026061515073169305",
+        "source": "news.mtn.co.kr",
+        "date": "2026-06-15 15:44"
+      },
+      {
+        "title": "月 9700원에 쇼핑 혜택까지… 현대홈쇼핑, 헬로모바일과 '유심 요금제' ...",
+        "url": "https://www.thepublic.kr/news/articleView.html?idxno=307675",
+        "source": "thepublic.kr",
+        "date": "2026-06-15 15:02"
       }
     ]
   }
