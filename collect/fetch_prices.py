@@ -128,19 +128,17 @@ def _scrape_market(sosok, url_tmpl=MARKET_SUM):
 
 
 def _index_change(date_str):
-    """KOSPI/KOSDAQ 등락률 — fdr.DataReader(지수는 KRX 직접 아님). 실패 시 None."""
-    try:
-        import FinanceDataReader as fdr
-    except Exception:
-        return {"kospi": None, "kosdaq": None}
-    end = date_str
-    start = (datetime.strptime(date_str, "%Y-%m-%d") - timedelta(days=15)).strftime("%Y-%m-%d")
+    """KOSPI/KOSDAQ 등락률 — 네이버 실시간 지수 폴링 API. 실패 시 None."""
     res = {}
-    for key, code in [("kospi", "KS11"), ("kosdaq", "KQ11")]:
+    for key, code in [("kospi", "KOSPI"), ("kosdaq", "KOSDAQ")]:
         try:
-            df = fdr.DataReader(code, start, end)
-            res[key] = round((float(df.iloc[-1]["Close"]) / float(df.iloc[-2]["Close"]) - 1) * 100, 2) \
-                if df is not None and len(df) >= 2 else None
+            url = "https://polling.finance.naver.com/api/realtime/domestic/index/" + code
+            r = requests.get(url, headers={**HEADERS, "Referer": "https://finance.naver.com/"}, timeout=10)
+            d = r.json()["datas"][0]
+            ratio = abs(float(str(d.get("fluctuationsRatio", "0")).replace(",", "")))
+            if (d.get("compareToPreviousPrice") or {}).get("name", "") == "FALLING":
+                ratio = -ratio
+            res[key] = round(ratio, 2)
         except Exception:
             res[key] = None
     return res
