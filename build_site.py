@@ -536,7 +536,7 @@ def render_index(d):
             + data_script + render_js)
 
     title = f"오늘 뭐 올랐슈 · {date_disp} | {C.SITE_NAME}"
-    return C.wrap_page(title, C.SITE_DESC, "index.html", "index.html", body)
+    return C.wrap_page(title, C.SITE_DESC, "", "index.html", body)
 
 
 def robots_txt():
@@ -544,7 +544,7 @@ def robots_txt():
 
 
 def sitemap_xml():
-    pages = ["index.html", "guide.html", "about.html", "faq.html",
+    pages = ["", "guide.html", "about.html", "faq.html",
              "disclaimer.html", "privacy.html", "terms.html"]
     today = datetime.today().strftime("%Y-%m-%d")
     items = "".join(
