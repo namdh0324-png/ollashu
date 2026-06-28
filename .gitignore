@@ -1,0 +1,19 @@
+# 실행 로그 (운영은 오라클 cron 쪽 — 로그를 레포에 남기지 않는다)
+update.log
+*.log
+
+# 파이썬 캐시/venv
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+stock_agent/
+
+# Cloudflare KV 시크릿 (절대 커밋 금지)
+.ollashu_kv.json
+
+# OS/에디터 부산물
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

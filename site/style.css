@@ -50,6 +50,7 @@ a{color:inherit; text-decoration:none}
 
 /* hero */
 .hero{padding:34px 0 18px}
+.hero-intro{margin:0 0 14px; color:var(--text-mid); font-size:16px; line-height:1.6; max-width:64ch}
 .hero .date{font-family:var(--mono); font-size:14px; color:var(--text-lo); letter-spacing:.02em}
 .hero h1{margin:6px 0 14px; font-size:clamp(28px,4.8vw,44px); line-height:1.15; font-weight:400; font-family:var(--display); letter-spacing:0; color:var(--text-hi)}
 .market-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap}

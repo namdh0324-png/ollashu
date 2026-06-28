@@ -152,6 +152,7 @@ def render_index(d):
         return "up-num" if v > 0 else ("down-num" if v < 0 else "flat-num")
 
     hero = """<section class="hero">
+<p class="hero-intro">코스피·코스닥·NXT에서 오늘 오른 테마주를 공개 시세로 한눈에 보여드립니다. 종목 추천 없이 시장 현황만 정리합니다.</p>
 <div class="date" id="heroDate"></div>
 <div class="hero-top">
   <h1>오늘 뭐 올랐슈~?</h1>
